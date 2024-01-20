@@ -10,3 +10,4 @@
 
 When you have to access methods from a function, create functions separated by commas within the parent function and add a return statement for the whole inner function. Return for eg, say boolean data type and if not then you can `throw new Error ("Error Message")` during the execution. Call the function first by passing values and access the method function by again passing a value.
 
+7. Handling multiple functions within an external function : 

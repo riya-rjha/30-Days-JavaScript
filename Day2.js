@@ -50,3 +50,45 @@ const expect = (val1) => {
 
 const resultAns = expect(5);
 console.log(resultAns.notToBe('5'));
+
+//Handling 3 functions within a counter function
+const createCounter = (init) => {
+    let counterVal = init;
+    function increment() {
+        return ++counterVal; //6
+    }
+    function decrement() {
+        return --counterVal; //4
+    }
+    function reset() {
+        return (counterVal = init); //5
+    }
+    return { increment, reset, decrement };
+}
+
+const answer = createCounter(5);
+console.log(answer.increment());
+console.log(answer.reset());
+console.log(answer.decrement());
+
+
+//Alternative method of accessing functions
+const createCounterAlternativeMethod = (init) => {
+    let counterVal = init;
+    return {
+        increment : () => {
+            return ++counterVal;
+        },
+        decrement : () => {
+            return --counterVal;
+        },
+        reset : () => {
+            return (counterVal = init);
+        }
+    }
+}
+
+const answerAlternative = createCounterAlternativeMethod(5);
+console.log(answerAlternative.increment());
+console.log(answerAlternative.reset());
+console.log(answerAlternative.decrement());
