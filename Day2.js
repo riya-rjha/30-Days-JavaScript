@@ -13,11 +13,11 @@ console.log(result());
 console.log(result());
 
 //Creating classes & constructors and then accessing values
-class Sum{
-    constructor(a){
+class Sum {
+    constructor(a) {
         this.a = a;
     }
-    sum(b){
+    sum(b) {
         // this.b = b;
         //Above line creates a property that can be used explicitly as it is for 'a'
         return this.a + b;
@@ -26,3 +26,27 @@ class Sum{
 const result2 = new Sum(5);
 console.log(result2.sum(2));
 
+//Using throw error functions
+const expect = (val1) => {
+    return {
+        toBe: (val2) => {
+            if (val1 === val2) {
+                return true;
+            }
+            else {
+                throw new Error("Not Equal");
+            }
+        },
+        notToBe: (val2) => {
+            if (val2 !== val1) {
+                return true;
+            }
+            else {
+                throw new Error("Equal");
+            }
+        }
+    }
+}
+
+const resultAns = expect(5);
+console.log(resultAns.notToBe('5'));
