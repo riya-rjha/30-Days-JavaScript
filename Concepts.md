@@ -10,4 +10,15 @@
 
 When you have to access methods from a function, create functions separated by commas within the parent function and add a return statement for the whole inner function. Return for eg, say boolean data type and if not then you can `throw new Error ("Error Message")` during the execution. Call the function first by passing values and access the method function by again passing a value.
 
-7. Handling multiple functions within an external function : 
+7. Handling multiple functions within an external function : To handle multiple functions within the external function block, we create functions by the normal process and then at the end we return all the functions in a parentheses format. 
+
+8. ### Arrays.map() function alternatives
+
+i. To create a mapping function for every element in the array we can simply run a for loop from index starting from 0 to the length of array.
+
+ii. Another method is to use "forEach()" loop, where for every element and the index of array, we assign values of element and index to the function. 
+
+iii. We can also use "forOf()" loop, where in we pass an element of the array and then assign values of element and index to the function and then increment index at every iteration. 
+
+9. ### Special Property of JavaScript
+When functions are being called and parameters are being sent, if more than one parameter is passed but not required then JS automatically ignores the second parameter and executes the rest of the code without showing any error.
