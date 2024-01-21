@@ -123,8 +123,3 @@ const newArrFiltered = ansArr.filter((el)=>
 )
 console.log(newArrFiltered);
 
-
-/*---------------*/
-
-
-//Array Reduced Transformation
