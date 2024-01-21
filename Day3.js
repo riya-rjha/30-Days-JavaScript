@@ -5,11 +5,11 @@ function plusOne(n) {
     return n + 1;
 }
 
-function plusIndex(n, i){
-    return n+i;
+function plusIndex(n, i) {
+    return n + i;
 }
 
-function constant(n){
+function constant(n) {
     return 140;
 }
 
@@ -25,7 +25,7 @@ var map = (arr, func) => {
 //Using forEach loop
 var map2 = (arr, func) => {
     let newArr = [];
-    arr.forEach((el,i) => {
+    arr.forEach((el, i) => {
         newArr[i] = func(el, i);
     });
     return newArr;
@@ -61,8 +61,70 @@ console.log(arr);
 //And the goal is to change the original array
 
 //Unchanged original array
-let newArr = arr.map((el, idx)=>
+let newArr = arr.map((el, idx) =>
     el = el + idx
 )
 console.log(arr); //Unchanged (map function not in parenthesis)
 console.log(newArr);
+
+
+/* -------------- */
+
+
+//Applpy filter to array 
+let array = [0, 10, 20, 30];
+function greaterThan10(n) {
+    return n > 10;
+}
+function firstIndex(n, i) {
+    return i === 0;
+}
+function squareI(n, i) {
+    return Math.pow(i, 2);
+}
+
+var filter = (arr, fn) => {
+    let newFilteredArr = [];
+    arr.forEach((el, idx) => {
+        if (fn(el, idx)) {
+            newFilteredArr.push(el);
+        }
+    });
+    return newFilteredArr;
+}
+
+const arrIII = [1, 2, 3];
+
+var filterII = (arrIII, fn) => {
+    let newFilteredArr = [];
+    let idx = 0;
+    for (let el of arrIII) {
+        if (fn(el, idx)) {
+            newFilteredArr[idx] = el;
+            idx++;
+        }
+    }
+    return newFilteredArr;
+}
+
+const newArrayI = filter(array, greaterThan10);
+console.log(newArrayI);
+
+const newArrayII = filterII(arrIII, firstIndex);
+console.log(newArrayII);
+
+const sqArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const newArrayIII = filter(sqArr, squareI);
+console.log(newArrayIII);
+
+const ansArr = [1, 2, 30];
+const newArrFiltered = ansArr.filter((el)=>
+    el%2===0
+)
+console.log(newArrFiltered);
+
+
+/*---------------*/
+
+
+//Array Reduced Transformation
