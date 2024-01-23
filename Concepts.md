@@ -37,3 +37,5 @@ Use forEach and forof method and remeber to push elements in array rather than a
 12. Composition of functions : If there exists an array of functions which can be represented as : 
 `functions = [x=>x+1, x=>x*x]`, then composition of functions is g(h(x)), where g(x) is the last function from the right and h(x) is the second last function from the right.
 
+13. ### Spread operator 
+...args is a spread parameter that is used to define any number of parameters that can be passed to a function. For eg, if we write a function(1, 2, 3), then we can simply define it using func(...args), where args represents the number of arguments passed in a single entity of array whose length can be calculated.

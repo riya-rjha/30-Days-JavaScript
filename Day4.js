@@ -57,3 +57,10 @@ var compose = function (functions) {
 
 const answer = compose(functions);
 console.log(answer(4));
+
+//Return number of parameters of function
+const param = (...args) => {
+    return args.length;
+}
+
+console.log(param({},0,"Riya"));
