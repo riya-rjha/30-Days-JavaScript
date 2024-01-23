@@ -34,3 +34,4 @@ When functions are being called and parameters are being sent, if more than one 
 
 Use forEach and forof method and remeber to push elements in array rather than assigning elements at particular indices as this might cause some spaces to remain blank. Whereas push function will push all elements in array irrespective of any blank space in between. Preferrable method for arrays : forEach()
 
+12. 
