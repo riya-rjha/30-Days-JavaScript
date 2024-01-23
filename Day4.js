@@ -1,3 +1,4 @@
+//Array Reduced Transformation
 let nums = [1, 2, 3, 4];
 let init = 100;
 
@@ -34,3 +35,25 @@ console.log(ans);
 
 const ansAlt = reduceAlt(nums, fn, init);
 console.log(ansAlt);
+
+
+// ----------
+//Function Composition
+
+const functions = [x => x + 1, x => 2 * x];
+
+var compose = function (functions) {
+
+    return function (x) {
+        if(functions.length === 0){
+            return x;
+        }
+        for(let i=functions.length - 1; i>=0; i--){
+            x = functions[i](x);
+        }
+        return x;
+    }
+};
+
+const answer = compose(functions);
+console.log(answer(4));

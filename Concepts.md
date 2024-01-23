@@ -34,4 +34,6 @@ When functions are being called and parameters are being sent, if more than one 
 
 Use forEach and forof method and remeber to push elements in array rather than assigning elements at particular indices as this might cause some spaces to remain blank. Whereas push function will push all elements in array irrespective of any blank space in between. Preferrable method for arrays : forEach()
 
-12. 
+12. Composition of functions : If there exists an array of functions which can be represented as : 
+`functions = [x=>x+1, x=>x*x]`, then composition of functions is g(h(x)), where g(x) is the last function from the right and h(x) is the second last function from the right.
+
