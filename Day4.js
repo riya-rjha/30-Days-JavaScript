@@ -64,3 +64,19 @@ const param = (...args) => {
 }
 
 console.log(param({},0,"Riya"));
+
+//Calling a function only once
+const onceFn = function(fn) {
+    let count = 0;
+    return function(...args){
+        if(count === 0){
+            count = 1;
+            return fn(...args);
+        }
+        return undefined;
+    }
+}
+
+const resultANS = (onceFn(fn));
+console.log(resultANS(1,2));
+console.log(resultANS(1,2));
