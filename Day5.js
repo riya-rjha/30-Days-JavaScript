@@ -34,3 +34,10 @@ console.log(callCount); // 1
 
 //Promises
 //Adding two promises
+var addTwoPromises = async(promise1, promise2) => {
+    return await promise1 + await promise2;
+}
+
+const ans = addTwoPromises(Promise.resolve(2), Promise.resolve(5));
+ans.then(console.log); // .then chains the value of promise and waits for complete execution
+//log statement might just print the promise current state even before complete execution

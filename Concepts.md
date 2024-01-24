@@ -39,3 +39,13 @@ Use forEach and forof method and remeber to push elements in array rather than a
 
 13. ### Spread operator 
 ...args is a spread parameter that is used to define any number of parameters that can be passed to a function. For eg, if we write a function(1, 2, 3), then we can simply define it using func(...args), where args represents the number of arguments passed in a single entity of array whose length can be calculated.
+
+14. ### Memoize functions
+Memoize is the one which can never be called twice with the same inputs. If a function is passed with parameters which have repeated more than once, then the function is memoized. As it stores the previous data in a variable and returns that stored data again as a cached data. This helps improve efficiency of the program. A JSON object is created in which stringified argument parameters are stored that check whether the current value exists in the object or not. 
+
+15. ### Promises
+i. Promise.resolve(value) 
+
+This method is used to store a value in the promise.
+
+ii. Promise functions are async and await, as the promises await until the execution of the next statement. And then we use thenables to print the statement as it ensures promise chaining. However if we simply store the result in a variable and add log statement, the result might be wrong as the statement after the await function might be executed first as it does not form a part of chaining. Thus, it becomes important to use thenables.
