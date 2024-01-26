@@ -49,3 +49,9 @@ i. Promise.resolve(value)
 This method is used to store a value in the promise.
 
 ii. Promise functions are async and await, as the promises await until the execution of the next statement. And then we use thenables to print the statement as it ensures promise chaining. However if we simply store the result in a variable and add log statement, the result might be wrong as the statement after the await function might be executed first as it does not form a part of chaining. Thus, it becomes important to use thenables.
+
+iii. .then(anything) is executed only after the execution of all the statements.
+
+16. Async function is a function which resolves a promise.
+
+17. 
