@@ -54,4 +54,8 @@ iii. .then(anything) is executed only after the execution of all the statements.
 
 16. Async function is a function which resolves a promise.
 
-17. 
+17. Calculating the length of a JSON object
+
+JSON.stringify(obj).length --> 2+ (2 is the parentheses included in length)
+
+Object.keys(obj).length --> Object.keys() converts the given object into an array

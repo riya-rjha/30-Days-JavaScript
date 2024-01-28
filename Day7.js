@@ -3,10 +3,10 @@
 const fn = (x) => x * 5;
 const result = [];
 const args = [2], t = 20, cancelTimeMs = 50;
-const start = performance.now();
+const start = performance.now(); //gives time at which opertion started
 
 const log = (...argsArr) => {
-    const diff = Math.floor(performance.now() - start);
+    const diff = Math.floor(performance.now() - start); //time between start & end of op in milisecs
     result.push({ "time": diff, "returned": fn(...argsArr) });
 }
 
@@ -27,7 +27,7 @@ var cancellable = function (fn, args, t) {
     return cancelFn;
 };
 
-/**
+/*
  * Alternative Solution : 
  * var cancellable = function(fn, args, t){
  *      const timer = setTimeout(()=>{
