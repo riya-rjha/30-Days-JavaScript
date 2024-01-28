@@ -19,7 +19,7 @@ const log = (...argsArr) => {
 var cancellable = function (fn, args, t) {
     fn(...args);
     const newFN = setInterval(() => {
-        return fn(...args); 
+        return fn(...args);
     }, t);
     const cancelFn = () => {
         clearInterval(newFN);
@@ -83,3 +83,34 @@ const stringIsThis = { "name": "RRJ", "field": "AIML" };
 const stringIsNotThis = {};
 console.log(isEmpty(stringIsThis));
 console.log(isEmpty(stringIsNotThis));
+
+
+//----------
+
+//Chunk Array
+
+var chunk = function (arr, size) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i = i + size) {
+        newArr.push(arr.slice(i, i + size));
+    }
+    return newArr;
+};
+
+const arr = [1, 9, 6, 3, 2];
+let size = 3;
+//Output : [[1,9,6],[3,2]]
+console.log(chunk(arr, size));
+
+//-------
+
+//Array Prototype Last
+Array.prototype.last = function(){
+    if(this.length === 0) {
+        return -1;
+    }
+    return this[this.length - 1];
+}
+
+const ans = arr.last();
+console.log(ans);

@@ -59,3 +59,9 @@ iii. .then(anything) is executed only after the execution of all the statements.
 JSON.stringify(obj).length --> 2+ (2 is the parentheses included in length)
 
 Object.keys(obj).length --> Object.keys() converts the given object into an array
+
+18. Methods in Array - Splice() & Slice()
+
+Both perform the same task, that is, to handle particular elements of array. The key difference however between both the methods is that slice returns a new array, whereas splice modifies the original array. Both start from a starting index going to ending indec - 1.
+
+19. Array.prototype() method is used to change the properties or values of an array. While using this constructor, we use "this" keyword to access the array.
