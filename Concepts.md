@@ -11,13 +11,14 @@
 
 5. When we write "this.term = term", then we are adding a new property to the instance of the class. This allows us to use the term explicitly outside. However when used implicitly it returns "NAN" - Not a Number.
 
-6. Learning Error Handling : 
+6. ### Learning Error Handling : 
 
 When you have to access methods from a function, create functions separated by commas within the parent function and add a return statement for the whole inner function. Return for eg, say boolean data type and if not then you can `throw new Error ("Error Message")` during the execution. Call the function first by passing values and access the method function by again passing a value.
 
-7. Handling multiple functions within an external function : To handle multiple functions within the external function block, we create functions by the normal process and then at the end we return all the functions in a parentheses format. 
+7. ### Handling multiple functions within an external function
+To handle multiple functions within the external function block, we create functions by the normal process and then at the end we return all the functions in a parentheses format. 
 
-8. ### Arrays.map() function alternatives
+9. ### Arrays.map() function alternatives
 
 i. To create a mapping function for every element in the array we can simply run a for loop from index starting from 0 to the length of array.
 
@@ -34,10 +35,11 @@ When functions are being called and parameters are being sent, if more than one 
 
 Use forEach and forof method and remeber to push elements in array rather than assigning elements at particular indices as this might cause some spaces to remain blank. Whereas push function will push all elements in array irrespective of any blank space in between. Preferrable method for arrays : forEach()
 
-12. Composition of functions : If there exists an array of functions which can be represented as : 
+12. ### Composition of functions
+If there exists an array of functions which can be represented as : 
 `functions = [x=>x+1, x=>x*x]`, then composition of functions is g(h(x)), where g(x) is the last function from the right and h(x) is the second last function from the right.
 
-13. ### Spread operator 
+14. ### Spread operator 
 ...args is a spread parameter that is used to define any number of parameters that can be passed to a function. For eg, if we write a function(1, 2, 3), then we can simply define it using func(...args), where args represents the number of arguments passed in a single entity of array whose length can be calculated.
 
 14. ### Memoize functions
@@ -52,16 +54,17 @@ ii. Promise functions are async and await, as the promises await until the execu
 
 iii. .then(anything) is executed only after the execution of all the statements.
 
-16. Async function is a function which resolves a promise.
+16. ### Async function is a function which resolves a promise.
 
-17. Calculating the length of a JSON object
+17. ### Calculating the length of a JSON object
 
 JSON.stringify(obj).length --> 2+ (2 is the parentheses included in length)
 
 Object.keys(obj).length --> Object.keys() converts the given object into an array
 
-18. Methods in Array - Splice() & Slice()
+18. ### Methods in Array - Splice() & Slice()
 
 Both perform the same task, that is, to handle particular elements of array. The key difference however between both the methods is that slice returns a new array, whereas splice modifies the original array. Both start from a starting index going to ending indec - 1.
 
-19. Array.prototype() method is used to change the properties or values of an array. While using this constructor, we use "this" keyword to access the array.
+19. ### Array.prototype()
+This method is used to change the properties or values of an array. While using this constructor, we use "this" keyword to access the array.
