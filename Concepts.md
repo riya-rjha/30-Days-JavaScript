@@ -72,7 +72,7 @@ This method is used to change the properties or values of an array. While using 
 20. ### Sorting of an Array & JSON Object
 The `Array.sort()` method sorts the array in an ascending order. However, for a JSON Object, if the key is same for all values, then sorting does not take place. And the sort() function modifies the original array itself. So, use the function of sort where two parameters are passed and the function checks for difference values of 0, 1, -1. 
 
-21. ### Promsie.race() method
+21. ### Promise.race() method
 This method us to create a promise's state. That is, as the name suggests, it does not wait for the asynchronous function to completely execute and assigns that state to the promise which has been executed first.
 
 22. ### Settimeout() function accepts method/function in the first parameter and not any arbitrary value.
