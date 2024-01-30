@@ -64,7 +64,10 @@ Object.keys(obj).length --> Object.keys() converts the given object into an arra
 
 18. ### Methods in Array - Splice() & Slice()
 
-Both perform the same task, that is, to handle particular elements of array. The key difference however between both the methods is that slice returns a new array, whereas splice modifies the original array. Both start from a starting index going to ending indec - 1.
+Both perform the same task, that is, to handle particular elements of array. The key difference however between both the methods is that slice returns a new array, whereas splice modifies the original array. Both start from a starting index going to ending index - 1.
 
 19. ### Array.prototype()
 This method is used to change the properties or values of an array. While using this constructor, we use "this" keyword to access the array.
+
+20. ### Sorting of an Array & JSON Object
+The `Array.sort()` method sorts the array in an ascending order. However, for a JSON Object, if the key is same for all values, then sorting does not take place. And the sort() function modifies the original array itself. So, use the function of sort where two parameters are passed and the function checks for difference values of 0, 1, -1. 
