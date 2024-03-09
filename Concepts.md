@@ -76,3 +76,11 @@ The `Array.sort()` method sorts the array in an ascending order. However, for a 
 This method us to create a promise's state. That is, as the name suggests, it does not wait for the asynchronous function to completely execute and assigns that state to the promise which has been executed first.
 
 22. ### Settimeout() function accepts method/function in the first parameter and not any arbitrary value.
+
+23. ### Debounce Function
+
+A debounce function is the function whose execution is delayed by 't' milliseconds and if called within the given span of delayed time, it cancels the execution. This method is useful when a function is repeatedly called in JavaScript & that calling results in unexpected behaviours.
+
+24. ### Classes & Instances
+
+To create the constructors of a particular class, we may use the attribute className.prototype.constructor_name = () function. However this is not a preferred method and we tend to create a class using the actual keyowrd class rather than going with the variable or let keyword and create constructors within the class along with the default constructor.

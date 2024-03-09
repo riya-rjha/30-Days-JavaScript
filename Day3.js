@@ -71,7 +71,7 @@ console.log(newArr);
 /* -------------- */
 
 
-//Applpy filter to array 
+//Apply filter to array 
 let array = [0, 10, 20, 30];
 function greaterThan10(n) {
     return n > 10;
