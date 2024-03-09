@@ -84,3 +84,7 @@ A debounce function is the function whose execution is delayed by 't' millisecon
 24. ### Classes & Instances
 
 To create the constructors of a particular class, we may use the attribute className.prototype.constructor_name = () function. However this is not a preferred method and we tend to create a class using the actual keyowrd class rather than going with the variable or let keyword and create constructors within the class along with the default constructor.
+
+25. ### Flattened Array
+
+A flattened array is the array in which most of the elements of the sub array are removed and only those ones are left remaining in the flattened array which are a part of the sub array.
