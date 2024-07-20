@@ -2,7 +2,7 @@
 
 const counter = (n) => {
     function increment() {
-        return () => n++;
+        return () => n++; // Callback function that stores reference
     }
     return increment();
 }
