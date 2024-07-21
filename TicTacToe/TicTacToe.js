@@ -1,6 +1,7 @@
 let arr = Array(9).fill(null);
 let currentEl = "X";
 const finalText = document.getElementById("final-text");
+let gameOver = false;
 
 const handleWin = () => {
   if (
@@ -11,20 +12,20 @@ const handleWin = () => {
     (arr[1] !== null && arr[1] == arr[4] && arr[4] == arr[7]) ||
     (arr[2] !== null && arr[2] == arr[5] && arr[5] == arr[8]) ||
     (arr[0] !== null && arr[0] == arr[4] && arr[4] == arr[8]) ||
-    (arr[3] !== null && arr[2] == arr[4] && arr[4] == arr[6])
+    (arr[2] !== null && arr[2] == arr[4] && arr[4] == arr[6])
   ) {
     // console.log("Winner is " + currentEl);
-    finalText.innerHTML = `Winner is ${currentEl}!`;
-    finalText.style.color = "green";
+    document.write(`Winner is ${currentEl}`);
+    return;
   }
 };
 
 const handleClick = (el) => {
-  let id = el.id;
-  //console.log(id);
-  el.innerHTML = currentEl;
+  let id = Number(el.id);
+  // console.log(id);
+  if (arr[id] !== null) return; // a block can only have one element
   arr[id] = currentEl;
-  if (arr[id] !== null) return;
+  el.innerHTML = currentEl;
   handleWin();
   currentEl = currentEl === "X" ? (currentEl = "O") : "X";
 };
