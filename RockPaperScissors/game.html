@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scissors </title>
+    <style>
+        body {
+            background-color: rgb(4, 0, 87);
+        }
+
+        #paper {
+            transform: rotate(270deg);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: cursive;
+            color: aliceblue;
+        }
+
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .images img {
+            padding: 22px;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: wheat;
+        }
+
+        .text h2 {
+            padding: 10px;
+            margin: 0 80px;
+        }
+
+
+        button {
+            text-align: center;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            padding: 3px 105px;
+            font-size: 22px;
+            font-family: cursive;
+            color: #006208;
+            background-color: navajowhite;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(255, 204, 128);
+            transition: all;
+            transition-delay: 75ms;
+            transition-property: all;
+            color: #3a0078;
+        }
+
+        #paraNew,#paraNew2, #answer {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(157, 220, 215);
+            font-family: cursive;
+            font-weight: 900;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="game">
+        <h1>Stone Paper Scissor!</h1>
+    </div>
+
+    <div class="images">
+        <img src="./img/stone.png" alt="Stone">
+        <img src="./img/paper.png" alt="Paper" id="paper">
+        <img src="./img/scissors.png" alt="Scissors">
+    </div>
+
+    <div class="text">
+        <h2>Stone</h2>
+        <h2>Paper</h2>
+        <h2>Scissor</h2>
+    </div>
+
+    <button id="buttonS">Ready to Play?</button>
+    <p id="paraNew2">
+
+    </p>
+    <p id="paraNew">
+
+    </p>
+    <p id="answer">
+
+    </p>
+
+
+    <script src="game.js"></script>
+</body>
+
+</html>
