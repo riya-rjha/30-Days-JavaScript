@@ -45,3 +45,25 @@ arr.map((el, idx) => {
 
 console.log(arr);
 
+const newArray = arr.filter((el) => {
+  return el % 2 == 0; // return true for even elements
+});
+
+console.log(newArray);
+
+// Reduce method - takes an array & gives a single value
+// accumulator & current value
+
+let sum = 0;
+for (let i = 0; i < 5; i++) {
+  sum = sum + newArray[i];
+}
+console.log("Value of sum: " + sum);
+
+const sum2 = newArray.reduce((acc, curr) => {
+  acc = acc + curr;
+  return acc;
+}, 0);
+
+console.log("Value of sum: " + sum2);
+
