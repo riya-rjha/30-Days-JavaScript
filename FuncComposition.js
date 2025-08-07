@@ -6,6 +6,12 @@ const fn = (accum, curr) => {
   return accum + curr * curr;
 };
 
+/**
+ * Re-implements Array.prototype.reduce using indices.
+ * @param {Array} nums
+ * @param {Function} fn
+ * @param {*} init
+ */
 var reduce = function (nums, fn, init) {
   let val = 0;
   for (let i = 0; i < nums.length; i++) {
@@ -21,6 +27,9 @@ var reduce = function (nums, fn, init) {
   return val;
 };
 
+/**
+ * Alternative reduce implementation using for..of.
+ */
 var reduceAlt = function (nums, fn, init) {
   let res = init;
   for (const el of nums) {
@@ -40,6 +49,11 @@ console.log(ansAlt);
 
 const functions = [(x) => x + 1, (x) => 2 * x];
 
+/**
+ * Compose functions right-to-left.
+ * @param {Array<Function>} functions
+ * @returns {Function}
+ */
 var compose = function (functions) {
   return function (x) {
     if (functions.length === 0) {
@@ -56,6 +70,9 @@ const answer = compose(functions);
 console.log(answer(4));
 
 //Return number of parameters of function
+/**
+ * Return the number of parameters provided.
+ */
 const param = (...args) => {
   return args.length;
 };
@@ -63,6 +80,11 @@ const param = (...args) => {
 console.log(param({}, 0, "Riya"));
 
 //Calling a function only once
+/**
+ * Ensure a function can only be called once; subsequent calls return undefined.
+ * @param {Function} fn
+ * @returns {Function}
+ */
 const onceFn = function (fn) {
   let count = 0;
   return function (...args) {

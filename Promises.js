@@ -12,6 +12,12 @@ console.log(products.sort());
 var fn = (key) => {
     return key.x; //value of 'x'
 }
+/**
+ * Sort array by a derived numeric key.
+ * @param {Array} arr
+ * @param {Function} fn - mapper yielding numeric value to sort by
+ * @returns {Array}
+ */
 var sortBy = function (arr, fn) {
     return arr.sort((a, b) => fn(a) - fn(b));
 };
@@ -31,6 +37,13 @@ fn = async (n) => {
     return n * n;
 }
 
+/**
+ * Wrap a promise-returning function with a time limit.
+ * Resolves if the original completes within t ms, otherwise rejects.
+ * @param {Function} fn
+ * @param {number} t - time limit in ms
+ * @returns {Function}
+ */
 var timeLimit = function (fn, t) {
 
     return async function (...args) {

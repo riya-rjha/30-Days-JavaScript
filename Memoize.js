@@ -2,6 +2,12 @@
 //It will never be called twice with same inputs
 //Returns cache value
 
+/**
+ * Memoize a function by caching results for argument lists.
+ * @template T
+ * @param {Function} fn
+ * @returns {Function}
+ */
 function memoize(fn) {
     let memo = {};
     return function (...args) {
@@ -34,6 +40,12 @@ console.log(callCount); // 1
 
 //Promises
 //Adding two promises
+/**
+ * Add results of two promises, preserving async semantics.
+ * @param {Promise<number>} promise1
+ * @param {Promise<number>} promise2
+ * @returns {Promise<number>}
+ */
 var addTwoPromises = async(promise1, promise2) => {
     return await promise1 + await promise2;
 }

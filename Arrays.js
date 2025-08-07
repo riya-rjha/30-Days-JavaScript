@@ -16,13 +16,21 @@ const log = (...argsArr) => {
 //Step 2 : Call again after every t miliseconds
 //Step 3 : Until cancelFn is called after cancelTimeMS
 
+/**
+ * Schedule repeated calls to a function every t ms and return a cancel function.
+ * The first call executes immediately.
+ * @param {Function} fn - function to invoke
+ * @param {Array} args - arguments passed to fn
+ * @param {number} t - interval in milliseconds
+ * @returns {Function} cancelFn - clears the interval when invoked
+ */
 var cancellable = function (fn, args, t) {
     fn(...args);
-    const newFN = setInterval(() => {
+    const intervalId = setInterval(() => {
         return fn(...args);
     }, t);
     const cancelFn = () => {
-        clearInterval(newFN);
+        clearInterval(intervalId);
     }
     return cancelFn;
 };
@@ -47,34 +55,17 @@ setTimeout(() => {
 // -------------
 
 //Is Object Empty Check
+/**
+ * Determine whether an object has no own enumerable properties.
+ * @param {Object} obj
+ * @returns {boolean}
+ */
 var isEmpty = (obj) => {
-
-    /*
-    
-    Approach 1
-    checks only for arrays
-
-    return obj.length === 0;
-
-    Approach 2
-    TC -O(n)
-
-    return JSON.stringify(obj).length<=2;
-
-    Approach 3
-    TC - O(1)
-    Optimized Solution
-
-    return Object.keys(obj).length === 0;
-
-    */
-
-    //Approach 4
-    //TC - O(1)
-    //Optimized Solution
-    for (i in obj) {
-        //if there exists any element
-        return false;
+    // O(1) check without allocating arrays
+    for (const key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            return false;
+        }
     }
     return true;
 }
@@ -88,7 +79,12 @@ console.log(isEmpty(stringIsNotThis));
 //----------
 
 //Chunk Array
-
+/**
+ * Split an array into chunks of a given size.
+ * @param {Array} arr
+ * @param {number} size
+ * @returns {Array[]}
+ */
 var chunk = function (arr, size) {
     let newArr = [];
     for (let i = 0; i < arr.length; i = i + size) {
@@ -105,6 +101,10 @@ console.log(chunk(arr, size));
 //-------
 
 //Array Prototype Last
+/**
+ * Return the last element of an array or -1 if empty.
+ * @returns {*}
+ */
 Array.prototype.last = function(){
     if(this.length === 0) {
         return -1;

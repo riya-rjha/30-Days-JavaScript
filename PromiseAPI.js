@@ -22,6 +22,7 @@ const p5 = new Promise((_, reject) => {
   }, 5000);
 });
 
+// all: resolves when all promises resolve, rejects if any rejects
 Promise.all([p1, p2, p3])
   .then((res) => {
     console.log(res);
@@ -30,6 +31,7 @@ Promise.all([p1, p2, p3])
     console.log(err.message);
   });
 
+// allSettled: waits for all to settle and returns statuses
 Promise.allSettled([p1, p3, p5])
   .then((res) => {
     console.log(res);
@@ -38,6 +40,7 @@ Promise.allSettled([p1, p3, p5])
     console.log(err.message);
   });
 
+// race: settles as soon as one settles
 Promise.race([p1, p2, p5])
   .then((res) => {
     console.log(res);

@@ -1,31 +1,38 @@
-let arr = Array(9).fill(null);
-let currentEl = "X";
+let board = Array(9).fill(null);
+let currentPlayer = "X";
 const finalText = document.getElementById("final-text");
 let gameOver = false;
 
+/**
+ * Check win conditions for the current board and update UI if there is a winner.
+ */
 const handleWin = () => {
+  const b = board;
   if (
-    (arr[0] !== null && arr[0] == arr[1] && arr[1] == arr[2]) ||
-    (arr[3] !== null && arr[3] == arr[4] && arr[4] == arr[5]) ||
-    (arr[6] !== null && arr[6] == arr[7] && arr[7] == arr[8]) ||
-    (arr[0] !== null && arr[0] == arr[3] && arr[3] == arr[6]) ||
-    (arr[1] !== null && arr[1] == arr[4] && arr[4] == arr[7]) ||
-    (arr[2] !== null && arr[2] == arr[5] && arr[5] == arr[8]) ||
-    (arr[0] !== null && arr[0] == arr[4] && arr[4] == arr[8]) ||
-    (arr[2] !== null && arr[2] == arr[4] && arr[4] == arr[6])
+    (b[0] !== null && b[0] == b[1] && b[1] == b[2]) ||
+    (b[3] !== null && b[3] == b[4] && b[4] == b[5]) ||
+    (b[6] !== null && b[6] == b[7] && b[7] == b[8]) ||
+    (b[0] !== null && b[0] == b[3] && b[3] == b[6]) ||
+    (b[1] !== null && b[1] == b[4] && b[4] == b[7]) ||
+    (b[2] !== null && b[2] == b[5] && b[5] == b[8]) ||
+    (b[0] !== null && b[0] == b[4] && b[4] == b[8]) ||
+    (b[2] !== null && b[2] == b[4] && b[4] == b[6])
   ) {
-    // console.log("Winner is " + currentEl);
-    document.write(`Winner is ${currentEl}`);
-    return;
+    finalText.textContent = `Winner is ${currentPlayer}`;
+    gameOver = true;
   }
 };
 
+/**
+ * Handle a cell click.
+ * @param {HTMLElement} el
+ */
 const handleClick = (el) => {
-  let id = Number(el.id);
-  // console.log(id);
-  if (arr[id] !== null) return; // a block can only have one element
-  arr[id] = currentEl;
-  el.innerHTML = currentEl;
+  if (gameOver) return;
+  const id = Number(el.id);
+  if (board[id] !== null) return; // a block can only have one element
+  board[id] = currentPlayer;
+  el.innerHTML = currentPlayer;
   handleWin();
-  currentEl = currentEl === "X" ? (currentEl = "O") : "X";
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
 };
