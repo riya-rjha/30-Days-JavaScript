@@ -5,8 +5,12 @@ let arrOfObj = [
     { "Name": "Alex", "Gender": 'M', "Age": 30 }
 ]
 
-const convertToArrofArr = (arrOfObj) => {
-    arrOfObj.map(obj => {
+/**
+ * For each object in the array, log its keys and values as arrays.
+ * @param {Array<Object>} source
+ */
+const convertToArrofArr = (source) => {
+    source.map(obj => {
         const ansKey = [];
         for (let key in obj) {
             ansKey.push(key);
@@ -14,7 +18,7 @@ const convertToArrofArr = (arrOfObj) => {
         console.log(ansKey);
     });
 
-    arrOfObj.map(obj => {
+    source.map(obj => {
         const ansVal = [];
         for (let key in obj) {
             ansVal.push(obj[key]);
